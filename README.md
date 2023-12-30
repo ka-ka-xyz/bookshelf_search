@@ -51,11 +51,18 @@ https://github.com/WorksApplications/elasticsearch-sudachi/blob/develop/docs/tut
 
 ### 検索用GUIのビルドに必要なソフトウェア
 
+### Node.js
+
 Node.jsとnpmを利用可能にしてください。
 
 https://nodejs.jp/
 https://community.chocolatey.org/packages/nodejs
 
+### Rust
+
+Rustをビルドできる環境を作成してください。
+
+https://www.rust-lang.org/ja/tools/install
 
 ## 検索用GUIのビルド
 
