@@ -1,0 +1,25 @@
+{
+    "properties": {
+        "id": { "type": "keyword" },
+        "url": { "type": "keyword" },
+        "title": { "type": "text" },
+        "content": {
+            "type": "text",
+            "fielddata": "true",
+            "analyzer": "standard",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+                "ja": {
+                    "type": "text",
+                    "fielddata": "true",
+                    "analyzer": "sudachi_analyzer",
+                    "term_vector": "with_positions_offsets"
+                }
+            }
+        },
+        "kwds": { "type": "keyword" },
+        "lang": { "type": "keyword" },
+        "index_modified": { "type": "date" },
+        "file_modified": { "type": "date" }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "analysis" : {
+        "analyzer" : {
+            "sudachi_analyzer" : {
+                "filter": [
+                    "my_searchfilter",
+                    "sudachi_normalizedform",
+                    "sudachi_ja_stop"
+                ],
+                "char_filter": [
+                    "jp_ocr_char_filter"
+                ],
+                "type" : "custom",
+                "tokenizer" : "sudachi_tokenizer"
+            }
+        },
+        "tokenizer" : {
+            "sudachi_tokenizer" : {
+                "type" : "sudachi_tokenizer",
+                "split_mode": "B",
+                "discard_punctuation" : "true"
+            }
+        },
+        "char_filter": {
+            "jp_ocr_char_filter": {
+                "type": "mapping",
+                "mappings": [
+                    "︒ => 。",
+                    "﹁ => 「",
+                    "﹂ => 」",
+                    "﹃ => 『",
+                    "﹄ => 』",
+                    "︵ => (",
+                    "︶ => )"
+                ]}
+        },
+        "filter":{
+            "my_searchfilter": {
+                "type": "sudachi_split",
+                "mode": "search"
+            }
+        }
+    }
+}
